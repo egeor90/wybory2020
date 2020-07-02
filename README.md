@@ -21,3 +21,5 @@ scrapy crawl TweetScraper -a query="#wybory2020"
 scrapy crawl TweetScraper -a query="#wybory2020" -a crawl_user=True
 ```
 
+### Download csv files from AWS EC2 instances to local machine
+scp -i <.pem> ec2-user@<FQDN>:/home/ec2-user/TweetScraper/Data/tweet/all_tweets_<dtime>.csv /path/to/all_tweets_<dtime>.csv
