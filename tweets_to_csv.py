@@ -36,4 +36,4 @@ with open(folder+'all_tweets.json', 'r') as f:
     data = json.load(f)
 df = pd.DataFrame(data)
 
-df.to_csv(folder+'all_tweets_'+dtime'+'.csv', index = False, header=True)
+df.to_csv(folder+'all_tweets_'+dtime+'.csv', index = False, header=True)
