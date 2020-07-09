@@ -83,4 +83,4 @@ daily_rate <- period.apply(candids_xts, INDEX = my.endpoints, FUN = function(x) 
 
 daily_rate$duda_pct <- round(daily_rate$duda/rowSums(daily_rate), 4)
 daily_rate$trzas_pct <- round(daily_rate$trzas/rowSums(daily_rate), 4)
-plot(daily_rate[,-c(1,2)])
+plot(daily_rate[,-c(1,2)], main = "Daily rate per candidate")
