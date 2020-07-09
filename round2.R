@@ -37,6 +37,7 @@ wyb2$text <- tolower(wyb2$text)
 
 wyb2 <- wyb2[which(as.POSIXct(wyb2$datetime) >= as.POSIXct("2020-06-29")),]
 
+# Polska gramatyka
 candids_ <- c("duda", "dudę","dudy", "dudą","dudzie","dudo",
               "trzaskowski","trzaskowskiemu","trzaskowskiego","trzaskowskim")
 
@@ -65,10 +66,7 @@ candids_xts$duda <- candids_xts[,1] / candids_xts$sum
 candids_xts$trzaskowski <- candids_xts[,2] / candids_xts$sum
 candids_xts <- candids_xts[,-3]
 
-#plot(cumsum(candids_xts)/rowSums(cumsum(candids_xts)), main = "Fluid opinions")
-
-df <- data.frame(nr_tweet = colSums(candids_df))
-
+# Cumulative percentage
 df_result <- data.frame(candidate = rownames(df), pct = 100*round(data.frame(pct = df[,1]/sum(df)),4)[,1])
 df_result <- data.frame(ratio = df_result[order(df_result$pct,decreasing = TRUE),])
 colnames(df_result) <- c("candidate", "pct")
